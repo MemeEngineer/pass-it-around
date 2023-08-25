@@ -10,13 +10,12 @@ app.get('/', (req, res) => {
 });
 app.get('/:number_of_bottles', (req, res) => {
     const {number_of_bottles} = req.params
-    
     const nextBot = number_of_bottles - 1
-
+    const bugs = (Math.floor(Math.random()* 1000))
     if (nextBot === -1) {
         res.send(`<h1>${number_of_bottles} Bottles of beer on the wall </h1> <a href='/'a> Home</a>`);
   } else {
-    res.send(`<h1>${number_of_bottles} Bottles of beer on the wall </h1> <a href='/${nextBot}' a> Take one down, pass it around </a>`);
+    res.send(`<h1>${number_of_bottles} Bottles of beer on the wall ${bugs} bugs in the code </h1> <a href='/${nextBot}' a> Take one down, pass it around </a>`);
   }
 });
 
